@@ -7,7 +7,6 @@ describe('App', () => {
       expect(err).toBe(null)
       expect(data).toMatchSnapshot()
       done()
-      jest.setTimeout(newTimeout)
     })
   })
 })
