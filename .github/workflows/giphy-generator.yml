@@ -5,15 +5,17 @@ on:
     types: [opened, edited]
   pull_request:
     types: [opened, edited]
-  issues_comment:
+  issue_comment:
     types: [opened, edited]
     
- jobs:
+jobs:
   giphy-generator:
+    name: GIPHY Generato
     runs-on: ubuntu-latest
   
     steps:
       - name: GIPHY Generator
+        id: giphy_generator
         uses: IAmHughes/giphy-generator@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
