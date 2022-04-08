@@ -1,7 +1,9 @@
-name: GIPHY Generator
+name: GIPHY generator
 
 on:
   issues:
+    types: [opened, edited]
+  push:
     types: [opened, edited]
   pull_request:
     types: [opened, edited]
@@ -10,7 +12,6 @@ on:
     
 jobs:
   giphy-generator:
-    name: GIPHY Generator
     runs-on: ubuntu-latest
   
     steps:
