@@ -1,0 +1,18 @@
+name: Team Approval Workflow
+on: pull_request_review
+
+jobs:
+  labelWhenApproved:
+    
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label approved pull requests
+      uses: abinoda/label-when-approved-action@1.0.5
+      uses: pullreminders/label-when-approved-action@master
+    - with: 
+        super_secret: ${{ secrets.SOLVE_MY_SECRET }}
+      env:
+        APPROVALS: "1"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ADD_LABEL: "approved"
+        REMOVE_LABEL: "awaiting%20review"
