@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: npm install and build webpack
         run: |
           npm install
@@ -30,12 +30,12 @@ jobs:
 
     strategy:
       matrix: 
-        node-version: [10.x, 12.x]
+        node-version: [12.x, 14.x, 16.x]
         os: [ubuntu-latest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - uses: actions/download-artifact@master 
       with: 
         name: webpack artifacts
